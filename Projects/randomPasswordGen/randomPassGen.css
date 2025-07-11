@@ -1,0 +1,162 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light grey text */
+    line-height: 1.6;
+}
+
+#container {
+    background-color: #282828; /* Slightly lighter dark grey for the container */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+#headLabel {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #f0f0f0; /* Even lighter for headings */
+    margin-bottom: 20px;
+    display: block; /* Ensure it takes its own line */
+}
+
+/* Style for all labels associated with radio buttons */
+label[id^="textFor"] {
+    font-size: 1.1em;
+    margin-left: 8px; /* Space between radio button and text */
+    cursor: pointer;
+    vertical-align: middle; /* Align text with radio button */
+}
+
+/* Customizing radio buttons */
+input[type="radio"] {
+    /* Hide default radio button */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #555; /* Dark grey border */
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    top: -1px; /* Fine-tune vertical alignment */
+}
+
+input[type="radio"]:checked {
+    background-color: #007bff; /* Bright blue when checked */
+    border-color: #007bff;
+}
+
+input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #e0e0e0; /* Light grey dot */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#mySubmit {
+    background-color: #0069d9; /* Default button color (a vibrant blue) */
+    color: #ffffff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#mySubmit:hover {
+    background-color: #00c7e0; /* High-contrast cyan on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#mySubmit:active {
+    background-color: #00e0b3; /* Even higher contrast green on click */
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+#generatedPassword {
+    background-color: #282828;
+    color: #00c7e0; /* The same high-contrast cyan for the generated password */
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 30px;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    min-height: 50px; /* Ensure space even when empty */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 400px;
+    word-wrap: break-word; /* Prevents long passwords from overflowing */
+    box-sizing: border-box;
+}
+
+/* Style for the label of the password length input */
+label[for="passwordLength"] {
+    display: inline-block; /* Allows setting width/height and keeps it next to the input */
+    margin-right: 8px; /* Space between the label and the input field */
+    vertical-align: middle; /* Aligns text nicely with the input */
+    font-family: Arial, sans-serif; /* Readable font */
+    font-size: 16px; /* Good base font size */
+    color: white; /* Darker text color */
+}
+
+/* Style for the password length input field */
+input[type="number"]#passwordLength {
+    /* Sizing */
+    width: 60px; /* Adjust width as needed for the number input */
+    padding: 8px 10px; /* Padding inside the input */
+    
+    /* Visuals */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Slightly rounded corners */
+    background-color: #f9f9f9; /* Off-white background */
+    font-family: Arial, sans-serif; /* Consistent font */
+    font-size: 16px; /* Consistent font size */
+    color: #333; /* Darker text color */
+    vertical-align: middle; /* Aligns with the label */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for focus */
+}
+
+/* Style for the password length input field when focused */
+input[type="number"]#passwordLength:focus {
+    border-color: #007bff; /* Blue border when focused */
+    outline: none; /* Remove default browser outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle blue glow for focus */
+}
+
+/* Style for the password length input field when it's read-only or disabled (optional) */
+input[type="number"]#passwordLength:read-only,
+input[type="number"]#passwordLength:disabled {
+    background-color: #e9e9e9; /* Lighter background for disabled state */
+    cursor: not-allowed; /* Indicate it's not editable */
+    opacity: 0.8; /* Slightly faded */
+}
